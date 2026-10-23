@@ -252,7 +252,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("annaScript Studio")
+        self.setWindowTitle("PySide6 Ribbons V1")
         self.resize(1400, 900)
         self.setMinimumSize(900, 300)
 
