@@ -209,14 +209,12 @@ class RibbonMenu(QWidget):
         layout.setSpacing(10)
 
         file_group = RibbonGroup("File", [
-            ["Save", "Save as"],
-            ["Open", "New"]
+            ["Save"],
+            ["Save as"]
         ])
 
-        # file_group.buttons["Save"].clicked.connect(self.file_ops["save"])
-        # file_group.buttons["Save as"].clicked.connect(self.file_ops["save_as"])
-        # file_group.buttons["Open"].clicked.connect(self.file_ops["open"])
-        # file_group.buttons["New"].clicked.connect(self.file_ops["new"])
+        file_group.buttons["Save"].clicked.connect(self.file_ops["save"])
+        file_group.buttons["Save as"].clicked.connect(self.file_ops["save_as"])
 
         layout.addWidget(file_group)
         layout.addStretch()
@@ -235,8 +233,8 @@ class RibbonMenu(QWidget):
             ["Heading"],
         ])
 
-        # insert_group.buttons["Title"].clicked.connect(self.insert_ops["title"])
-        # insert_group.buttons["Heading"].clicked.connect(self.insert_ops["heading"])
+        insert_group.buttons["Title"].clicked.connect(self.insert_ops["title"])
+        insert_group.buttons["Heading"].clicked.connect(self.insert_ops["heading"])
 
         layout.addWidget(insert_group)
         layout.addStretch()
@@ -258,8 +256,8 @@ class MainWindow(QMainWindow):
 
 
         file_ops = {
-            "save": print("hi"),
-            "save_as": print("hi"),
+            "save": lambda: print("hi"),
+            "save_as": lambda: print("hi"),
         }
         insert_ops = {
             "title": lambda: print("hi"),
